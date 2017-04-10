@@ -1,11 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    with open("index.html") as f:
-        return f.read()
+    return render_template("index.html")
+
+@app.route("/responder")
+def response():
+    return "asdasdas"
 
 if __name__ == "__main__":
     app.run()
