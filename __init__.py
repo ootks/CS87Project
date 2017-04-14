@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ def homepage():
 
 @app.route("/responder")
 def response():
-    return "asdasdas"
+    return str(request.args.get("message"))
 
 if __name__ == "__main__":
     app.run()
