@@ -47,21 +47,21 @@ def bag2tfidfs(bag, idfs):
         tfidf[word] = idfs[word] * bag[word]
     return tfidf
 
+if __name__ == '__main__':
+    states=[line.strip() for line in open("states.txt")]
 
-states=[line.strip() for line in open("states.txt")]
+    state_bags = dict()
 
-state_bags = dict()
+    #Turn all of the state data into bags
+    for state in states:
+        with open('states/' + re.sub(" ", "_", state).lower() + ".txt") as g:
+            state_bags[state] = text2bag(g.read())
 
-#Turn all of the state data into bags
-for state in states:
-    with open('states/' + re.sub(" ", "_", state).lower() + ".txt") as g:
-        state_bags[state] = text2bag(g.read())
+    idfs = bags2idfs(state_bags)
+    tf_idfs = dict()
 
-idfs = bags2idfs(state_bags)
-tf_idfs = dict()
+    for state in states:
+        tf_idfs[state] = bag2tfidfs(state_bags[state], idfs)
 
-for state in states:
-    tf_idfs[state] = bag2tfidfs(state_bags[state], idfs)
-
-with open("state_tf_idfs.js", 'w') as g:
-    g.write(json.dumps(tf_idfs, indent = 4, separators = (',', ': ')))
+    with open("state_tf_idfs.js", 'w') as g:
+        g.write(json.dumps(tf_idfs, indent = 4, separators = (',', ': ')))
