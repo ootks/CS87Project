@@ -1,49 +1,67 @@
 # Implements tf-idf algorithm (term frequency–inverse document frequency)
+#Writes all of the tf-idf data to state_tf_idfs.js
 
-import re, math
+import re, math, json
 
-# Returns dictionary indicating number of occurences of each unique word.
-def to_word_table(text):
-    # Split the text by spaces
-    words = re.split(" ", text)
+
+def text2bag(text):
+    """
+    Converts text to a bag of words (dictionary: words -> counts)
+    """
+    words = re.split(" +", text)
     words_table = dict()
-    # Count the occurence of each word
     for word in words:
-        c = words_table.get(word, 0)
-        words_table[word] = c + 1
-    # Return the dictionary 
+        if word == "":
+            continue
+        #Increment count of each word
+        if word not in words_table:
+            words_table[word] = 1
+        else:
+            words_table[word] = words_table[word] + 1
     return words_table
 
-
-# Computes the relative importance of a word in a list of sentences,
-# with a higher value indicating greater importance.
-# 
-# bags: the set of sentences
-# word: the word (contained in bags) for which we desire to calculate
-#        the importance
 def word_idf(bags, word):
-    return math.log(sum([word in bag for bag in bags])/float(len(bags)))
+    """
+    Gets the idf for word with respect to the corpus (bags)
+    """
+    #Return Log(#bags containing word / #number of bags)
+    return math.log(sum([word in bag for bag in bags.values()])/float(len(bags)))
 
-# Calculate the relative importance of each word in "bags", which is
-# a list of sentences.
-def idfs(bags):
+def bags2idfs(bags):
+    """
+    Gets the idfs for all of the words in bags
+    """
     idf = dict()
-    for bag in bags: 
-        for word in bag.split(): # @Kevin: made a change to bag.split()
+    for bag in bags.values():
+        for word in bag:
             if word not in idf:
                 idf[word] = word_idf(bags, word)
     return idf
-            
-############################################################
-# EXAMPLE USAGE:
-############################################################
 
-# # Prints {'world': 1, 'hello': 1} to indicate 1 "hello", 1 "world"
-# print(to_word_table("hello world"))
-# # Prints -0.6931471805599453
-# print(word_idf(["hello world", "hello man"], "man"))
-# # Prints 0.0; "hello" is more important than "man"
-# print(word_idf(["hello world", "hello man"], "hello"))
-# # Calculates importance of all words in the sentences.
-# print(idfs(["hello world", "hello darkness my old friend", "hello friend"]))
+def bag2tfidfs(bag, idfs):
+    """
+    Gets the tf_idfs for the specified bag
+    """
+    tfidf = dict()
+    for word in bag:
+        tfidf[word] = idfs[word] * bag[word]
+    return tfidf
 
+
+states=[line.strip() for line in open("states.txt")]
+
+state_bags = dict()
+
+#Turn all of the state data into bags
+for state in states:
+    with open('states/' + re.sub(" ", "_", state).lower() + ".txt") as g:
+        state_bags[state] = text2bag(g.read())
+
+idfs = bags2idfs(state_bags)
+tf_idfs = dict()
+
+for state in states:
+    tf_idfs[state] = bag2tfidfs(state_bags[state], idfs)
+
+with open("state_tf_idfs.js", 'w') as g:
+    g.write(json.dumps(tf_idfs, indent = 4, separators = (',', ': ')))

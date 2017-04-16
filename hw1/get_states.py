@@ -12,7 +12,6 @@ h.ignore_images = True
 h.ignore_emphasis = True
 h.body_width = 0
 
-# for state in states:
 #Stemmer for getting stems
 porter = nltk.PorterStemmer()
 for state in states:
