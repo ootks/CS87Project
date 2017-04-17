@@ -92,7 +92,9 @@ def tt1():
 def tt1_response():
     #Get the message from the client
     message = str(request.args.get("message"))
-    return textualtoy.get_poem(message.split("\n"))
+    lines = [line for line in message.split("\n") if line != '']
+    response = textualtoy.get_poem(lines)
+    return re.sub("\n", "<br>", response)
 
 
 if __name__ == "__main__":

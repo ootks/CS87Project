@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block css %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='texttoy.css') }}">
+{% endblock %}
+
 {% block scripts %}
 <script src="{{ url_for('static',filename='tt1_submitter.js') }}"></script> 
 {% endblock %}
@@ -7,7 +11,8 @@
 {% block contents %}
 <div id = "chatbox">
 <div id= "chat">
-    <input type = "text" id = "messenger">
+    <textarea id = "messenger" cols="50"></textarea>
+    <button type="button" id="submit">Submit</button>
 </div>
 <div id = "responses">
 </div>
