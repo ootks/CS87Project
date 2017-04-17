@@ -3,6 +3,9 @@
 import random # Used to randomize sentence-padding & sentence selection.
 from tf_idf_claire import *
 from cosine_similarity_claire import *
+import os
+
+dir_path = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 ###############################################################################################
 # C A U T I O N - C A U T I O N - C A U T I O N - C A U T I O N - C A U T I O N - C A U T I O N 
@@ -94,7 +97,7 @@ def get_padding(number_sentences, filename='simon_and_garfunkel.txt'):
 	if number_sentences <= 0:
 		return []
 
-	with open(filename) as file:
+	with open(dir_path + filename) as file:
 		new_lines = random.sample(file.readlines(), number_sentences)
 
 	return new_lines
@@ -145,7 +148,7 @@ def get_parsed_dickinson_list(filename='dickinson.txt'):
 	dickinson_list = []
 
 	# Turn dickinson.txt into a list of strings.
-	with open(filename) as file:
+	with open(dir_path + filename) as file:
 		unparsed_list = file.readlines()
 
 	# Cleanse sentences of punctuation and extraneous whitespace

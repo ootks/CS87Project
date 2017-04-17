@@ -5,6 +5,10 @@ import re
 from state_related import tf_idf
 from state_related import cosine_similarity
 from state_related import parse
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.realpath(__file__))+'/textualtoy1')
+from textualtoy1 import textualtoy
 
 app = Flask(__name__)
 
@@ -26,11 +30,14 @@ for state in states:
 
 @app.route("/")
 def homepage():
-    #Return the index page
     return render_template("index.html")
+@app.route("/chatbot")
+def chatbot():
+    #Return the index page
+    return render_template("chatbot.html")
 
-@app.route("/responder")
-def response():
+@app.route("/state_responder")
+def state_response():
     #Get the message from the client
     message = str(request.args.get("message"))
     #If the client sends over a state,
@@ -61,7 +68,6 @@ def most_similar_state(message):
     for state in bags:
         if state != "message":
             cos = cosine_similarity.cos_sim(bags["message"], bags[state])
-            print(state, cos)
             if cos > max_cos:
                 candidate = state
                 max_cos = cos
@@ -77,6 +83,17 @@ def get_response(state):
             stem2tokens[most_sig[state][3]][0]
             )
     
+@app.route("/tt1")
+def tt1():
+    #Get the message from the client
+    return render_template("textualtoy1.html")
+
+@app.route("/tt1_responder")
+def tt1_response():
+    #Get the message from the client
+    message = str(request.args.get("message"))
+    return textualtoy.get_poem(message.split("\n"))
+
 
 if __name__ == "__main__":
     app.run(debug=True)

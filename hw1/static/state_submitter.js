@@ -9,7 +9,7 @@ $(function() {
         {
             var x = $("#messenger").val();
             new_message("You", x);
-            $.get("responder", {"message": x}, 
+            $.get("state_responder", {"message": x}, 
                 function(data){
                     new_message("Server", data);
                 }

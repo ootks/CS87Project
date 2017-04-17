@@ -1,4 +1,5 @@
-# Implements tf-idf algorithm (term frequency–inverse document frequency)
+# Implements tf-idf algorithm
+
 import string
 from math import log
 
