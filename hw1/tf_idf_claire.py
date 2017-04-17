@@ -17,10 +17,9 @@ def tf(sentence, word):
     '''
     # Double-check that white-space and punctuation have been stripped
     # from both word and sentence. 
-    word = word.strip() 
     translator = str.maketrans('','', string.punctuation)
-    word = word.translate(translator) 
-    sentence = sentence.translate(translator) 
+    word = word.translate(translator).strip()
+    sentence = sentence.translate(translator).strip()
 
     return sentence.split().count(word)
 
@@ -46,9 +45,13 @@ def get_tfidf_dict(corpus):
     Returns dictionary pointing (sentence, word) tuple to tfidf(corpus, sentence, word)
     NOTE: maps (sentence, word) -> importance, NOT sentence -> importance
     '''
+    translator = str.maketrans('','', string.punctuation)
+
     tfidf_dict = {}
     for sentence in corpus:
+        sentence = sentence.translate(translator).strip()
         for word in set(sentence.split()): # don't repeat words in the sentence
+            word = word.translate(translator).strip()
             tfidf_dict[sentence, word] = tfidf(corpus, sentence, word)
 
     return tfidf_dict
@@ -70,7 +73,7 @@ def get_sentence_tfidf_dict(corpus):
 
 
 ###############################################################################################
-# EXAMPLE USAGE, DO NOT DELETE
+# EXAMPLE USAGE / TESTS, DO NOT DELETE
 ###############################################################################################
 # # prints 2
 # print("tf:\t", tf("hello jello", "jello"), "\n") 

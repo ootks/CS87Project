@@ -1,7 +1,7 @@
 # Functions as a "textual toy" for part 3 of homework 1.
 
 import random # Used to randomize sentence-padding & sentence selection.
-from tf_idf import * # Contains tf-idf implementation
+from tf_idf_claire import * # Contains tf-idf implementation in claire-style
 
 # This constant indicates the minimum number of sentences as input.
 # If input is below this minimum, we pad with random Simon & Garfunkel lyrics
@@ -9,10 +9,13 @@ from tf_idf import * # Contains tf-idf implementation
 minimum_length = 20 # sentences
 
 # We cannot randomly select a sentence ranked below this constant in importance.
-# Ex: If this constant is 5, we cannot select the 6th most important sentence.
 # This number is used in *all* sentence selections, and so functions as a 
 # general "entropy" constant.
-importance_rank = 5
+# This number should NEVER be less than 'minimum_length' variable
+# Ex: If this constant is 5, we cannot select the 6th most important sentence.
+minimum_importance_rank = 5
+
+
 
 def make_story(user_input):
 	'''
@@ -25,25 +28,31 @@ def make_story(user_input):
 	but the three lines should represent some sort of similarity (in pairs).
 	'''
 
-	# Story will contain the 3-line output.
+	# Confirm that user has not failed to read comments
+	if minimum_importance_rank >= minimum_length:
+		return -1
+
+	# 'story' will contain the 3-line poem we are generating.
 	story = ""
 
-	# Pad with sentences from simon_and_garfunkel.txt if not sufficiently long
+	# Pad with sentences from simon_and_garfunkel.txt if not 
+	# 'user_input' does not have enough sentences
 	deficit = minimum_length - len(user_input)
 	if (deficit > 0):
 		user_input.extend(get_padding(deficit))
 
 
 	# 1. Randomly pick one of the 3 most important sentences- output it.
-	first_sentence = get_first_sentence(importance_rank, user_input)
-	story += first_sentence
+	user_sentence = get_user_sentence_by_importance(importance_rank, user_input)
+	story += user_sentence1
 
 	# 2. Output the most similar sentence in dickinson_first_lines.txt
 	dickinson_sentence = get_dickinson_sentence(importance_rank, first_sentence, "dickinson.txt")
 	story += dickinson_sentence
 
 	# 3. Pick a similar sentence to the dickinson line, output that.
-	story += get_second_sentence(importance_rank, dickinson_sentence, user_input)
+	user_sentence2 = get_user_sentence_by_similarity(importance_rank, dickinson_sentence, user_input)
+	story += user_sentence2
 
 	return story
 
@@ -68,7 +77,7 @@ def get_padding(number_sentences, filename='simon_and_garfunkel.txt'):
 	return new_lines
 
 
-def get_first_sentence(rank, source):
+def get_user_sentence_by_importance(rank, source):
 	'''
 	Gets a sentence within the "rank"-most importance sentences.
 	Source variable is a list of strings.
@@ -76,7 +85,7 @@ def get_first_sentence(rank, source):
 	sentence = ""
 
 	# Sort sentences in user input by importance rank
-	source = sorted(source, key=lambda x: sum(map(importance, x.split())))
+
 
 	# Return a sentence at random from the top-ranked, using rank variable.
 	return random.choice(source[0:rank])
@@ -100,7 +109,7 @@ def get_dickinson_sentence(rank, prev_sentence, filename='dickinson.txt'):
 
 	return random.choice(dickinson_lines[0:rank])
 
-def get_second_sentence(rank, prev_sentence, source):
+def get_user_sentence_by_similarity(rank, prev_sentence, source):
 	'''
 	Gets a sentence that was similar to the previous sentence, prev_sentence.
 	Source variable is a list of strings.
