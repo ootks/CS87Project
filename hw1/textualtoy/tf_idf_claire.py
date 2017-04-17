@@ -18,8 +18,8 @@ def tf(sentence, word):
     # Double-check that white-space and punctuation have been stripped
     # from both word and sentence. 
     translator = str.maketrans('','', string.punctuation)
-    word = word.translate(translator).strip()
-    sentence = sentence.translate(translator).strip()
+    word = word.translate(translator).strip().lower()
+    sentence = sentence.translate(translator).strip().lower()
 
     return sentence.split().count(word)
 
@@ -49,9 +49,9 @@ def get_tfidf_dict(corpus):
 
     tfidf_dict = {}
     for sentence in corpus:
-        sentence = sentence.translate(translator).strip()
+        sentence = sentence.translate(translator).strip().lower()
         for word in set(sentence.split()): # don't repeat words in the sentence
-            word = word.translate(translator).strip()
+            word = word.translate(translator).strip().lower()
             tfidf_dict[sentence, word] = tfidf(corpus, sentence, word)
 
     return tfidf_dict

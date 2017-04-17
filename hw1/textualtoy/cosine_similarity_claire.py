@@ -9,7 +9,7 @@ import string
 # Finally, use the order "corpus -> sentence -> word" (biggest to smallest), whenever relevant.
 ###############################################################################################
 
-def cosine_similarity_claire(tfidf_dict, sentence1, sentence2):
+def cosine_similarity(tfidf_dict, sentence1, sentence2):
     '''
     Returns the cosine similarity of two vectors representing two sentences
     tfidf_dict maps (sentence, word) -> importance
@@ -18,8 +18,8 @@ def cosine_similarity_claire(tfidf_dict, sentence1, sentence2):
 
     # Cleanse sentences of punctuation and extraneous whitespace, then convert to lists
     translator = str.maketrans('','', string.punctuation)
-    sentence1 = sentence1.translate(translator).strip()
-    sentence2 = sentence2.translate(translator).strip()
+    sentence1 = sentence1.translate(translator).strip().lower()
+    sentence2 = sentence2.translate(translator).strip().lower()
 
     # Store each sentence as a set for iteration
     set_sen1 = set(sentence1.split())
@@ -39,18 +39,17 @@ def cosine_similarity_claire(tfidf_dict, sentence1, sentence2):
 ###############################################################################################
 # EXAMPLE USAGE / TESTS, DO NOT DELETE
 ###############################################################################################
-test_sentence1 = 'hello hello world'
-test_sentence2 = 'hello jello world'
-test_sentence3 = "let's go to tommy's"
-# This is a stupidly long line. 
+# test_sentence1 = 'hello hello world'
+# test_sentence2 = 'hello jello world'
+# test_sentence3 = "let's go to tommy's"
 
-from tf_idf_claire import get_tfidf_dict
-test_tfidf_dict = get_tfidf_dict([test_sentence1, test_sentence2, test_sentence3])
+# from tf_idf_claire import get_tfidf_dict
+# test_tfidf_dict = get_tfidf_dict([test_sentence1, test_sentence2, test_sentence3])
 
-# Compare 'hello hello world' to 'hello jello'
-print(cosine_similarity_claire(test_tfidf_dict, test_sentence1, test_sentence2))
+# # Compare 'hello hello world' to 'hello jello'
+# print(cosine_similarity(test_tfidf_dict, test_sentence1, test_sentence2))
 
-# Compare 'hello hello world' to "let's go to tommy's"
-print(cosine_similarity_claire(test_tfidf_dict, test_sentence1, test_sentence3))
+# # Compare 'hello hello world' to "let's go to tommy's"
+# print(cosine_similarity(test_tfidf_dict, test_sentence1, test_sentence3))
 
 
