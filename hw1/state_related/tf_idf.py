@@ -29,6 +29,8 @@ def word_idf(bags, word):
 def bags2idfs(bags):
     """
     Gets the idfs for all of the words in bags
+    where bags is a dictionary, whose values 
+    are bags
     """
     idf = dict()
     for bag in bags.values():
