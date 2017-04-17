@@ -2,3 +2,4 @@
 *.swo
 *.swp
 hw1/states/*
+.DS_Store
