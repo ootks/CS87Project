@@ -1,6 +1,10 @@
+#!/usr/bin/python3
 import re
 import json
 from tf_idf import * 
+
+#Number of words we will add to the important words under consideration
+g_NWORDS = 10
 
 states=[line.strip() for line in open("states.txt")]
 
@@ -22,7 +26,7 @@ for state in states:
 most_sig = dict()
 for state in states:
     curr = tf_idfs[state]
-    most_sig[state] = sorted(curr.keys(), key=lambda x:curr[x])[:4]
+    most_sig[state] = sorted(curr.keys(), key=lambda x:curr[x])[:g_NWORDS]
 
 #Write the most significant words to a json file
 with open("most_sig.js", 'w') as f:

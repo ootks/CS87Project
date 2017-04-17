@@ -1,6 +1,5 @@
 # Implements tf-idf algorithm (term frequency–inverse document frequency)
 #Writes all of the tf-idf data to state_tf_idfs.js
-
 import re, math, json
 
 

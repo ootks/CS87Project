@@ -1,302 +1,602 @@
 {
-    "Indiana": [
-        "indiana",
-        "indianapoli",
-        "evansvil",
-        "wabash"
-    ],
-    "Mississippi": [
-        "mississippi",
-        "leve",
-        "biloxi",
-        "delta"
-    ],
-    "Utah": [
-        "utah",
-        "wasatch",
-        "salt",
-        "provo"
-    ],
-    "Illinois": [
-        "illinoi",
-        "chicago",
-        "champaign",
-        "rockford"
-    ],
-    "Ohio": [
-        "ohio",
-        "ohioan",
-        "cincinnati",
-        "toledo"
-    ],
-    "Kansas": [
-        "kansa",
-        "wichita",
-        "topeka",
-        "brownback"
-    ],
-    "West Virginia": [
-        "virginia",
-        "charleston",
-        "wheel",
-        "kanawha"
-    ],
-    "Montana": [
-        "montana",
-        "helena",
-        "yellowston",
-        "montanan"
-    ],
-    "Georgia": [
-        "georgia",
-        "atlanta",
-        "savannah",
-        "macon"
-    ],
-    "Louisiana": [
-        "louisiana",
-        "parish",
-        "orlean",
-        "creol"
-    ],
-    "North Dakota": [
-        "dakota",
-        "bismarck",
-        "minot",
-        "pp"
-    ],
-    "Florida": [
-        "florida",
-        "seminol",
-        "tampa",
-        "miami"
-    ],
-    "Pennsylvania": [
-        "pennsylvania",
-        "pittsburgh",
-        "philadelphia",
-        "eri"
-    ],
-    "Virginia": [
-        "virginia",
-        "virginian",
-        "richmond",
-        "fairfax"
-    ],
-    "Oklahoma": [
-        "oklahoma",
-        "tulsa",
-        "oklahoman",
-        "norman"
-    ],
-    "Washington": [
-        "seattl",
-        "tacoma",
-        "cascad",
-        "washington"
-    ],
-    "California": [
-        "california",
-        "san",
-        "sacramento",
-        "californian"
-    ],
-    "Nevada": [
-        "nevada",
-        "vega",
-        "reno",
-        "washo"
-    ],
-    "Wisconsin": [
-        "wisconsin",
-        "milwauke",
-        "madison",
-        "eau"
-    ],
-    "New Jersey": [
-        "jersey",
-        "bergen",
-        "newark",
-        "trenton"
-    ],
-    "Rhode Island": [
-        "rhode",
-        "newport",
-        "narragansett",
-        "aquidneck"
-    ],
-    "Delaware": [
-        "delawar",
-        "wilmington",
-        "sussex",
-        "castl"
-    ],
-    "Vermont": [
-        "vermont",
-        "rutland",
-        "bennington",
-        "champlain"
-    ],
-    "Colorado": [
-        "colorado",
-        "denver",
-        "boulder",
-        "marijuana"
-    ],
-    "Maine": [
-        "main",
-        "portland",
-        "brunswick",
-        "acadia"
-    ],
-    "Oregon": [
-        "oregon",
-        "portland",
-        "willamett",
-        "cascad"
-    ],
-    "Connecticut": [
-        "connecticut",
-        "hartford",
-        "haven",
-        "bridgeport"
-    ],
-    "Alaska": [
-        "anchorag",
-        "alaskan",
-        "fairbank",
-        "alaska"
-    ],
-    "Massachusetts": [
-        "massachusett",
-        "boston",
-        "springfield",
-        "cod"
-    ],
-    "New Mexico": [
-        "mexico",
-        "albuquerqu",
-        "fe",
-        "santa"
-    ],
-    "South Carolina": [
-        "carolina",
-        "charleston",
-        "newberri",
-        "undergradu"
-    ],
-    "South Dakota": [
-        "dakota",
-        "sioux",
-        "rushmor",
-        "yankton"
-    ],
-    "Minnesota": [
-        "minnesota",
-        "minneapoli",
-        "minnesotan",
-        "dfl"
-    ],
-    "Wyoming": [
-        "wyom",
-        "yellowston",
-        "teton",
-        "larami"
+    "Michigan": [
+        "michigan",
+        "detroit",
+        "peninsula",
+        "mackinac",
+        "huron",
+        "saginaw",
+        "sault",
+        "lans",
+        "ontario",
+        "ste"
     ],
     "Hawaii": [
         "hawaii",
         "hawai",
         "honolulu",
-        "polynesian"
+        "polynesian",
+        "hawaiian",
+        "ahu",
+        "maui",
+        "kaua",
+        "kamehameha",
+        "archipelago"
     ],
-    "Arkansas": [
-        "arkansa",
-        "ozark",
-        "arkansan",
-        "fayettevil"
+    "North Dakota": [
+        "dakota",
+        "bismarck",
+        "minot",
+        "pp",
+        "fargo",
+        "mandan",
+        "npl",
+        "fork",
+        "dakotan",
+        "dancer"
     ],
-    "Kentucky": [
-        "kentucki",
-        "louisvil",
-        "bluegrass",
-        "lexington"
-    ],
-    "Iowa": [
-        "iowa",
-        "moin",
-        "dubuqu",
-        "quad"
-    ],
-    "Alabama": [
-        "alabama",
-        "birmingham",
-        "huntsvil",
-        "tuscaloosa"
-    ],
-    "Texas": [
-        "texa",
-        "houston",
-        "dalla",
-        "austin"
-    ],
-    "Arizona": [
-        "arizona",
-        "tucson",
-        "phoenix",
-        "flagstaff"
-    ],
-    "New Hampshire": [
-        "hampshir",
-        "manchest",
-        "exet",
-        "portsmouth"
-    ],
-    "New York": [
-        "manhattan",
-        "york",
-        "hudson",
-        "albani"
-    ],
-    "Idaho": [
-        "idaho",
-        "bois",
-        "lewiston",
-        "pocatello"
-    ],
-    "Missouri": [
-        "missouri",
-        "kansa",
-        "loui",
-        "st"
-    ],
-    "Maryland": [
-        "maryland",
-        "baltimor",
-        "chesapeak",
-        "calvert"
-    ],
-    "Michigan": [
-        "michigan",
-        "detroit",
-        "peninsula",
-        "mackinac"
-    ],
-    "North Carolina": [
-        "carolina",
-        "charlott",
-        "raleigh",
-        "greensboro"
-    ],
-    "Nebraska": [
-        "nebraska",
-        "omaha",
-        "unicamer",
-        "oto"
+    "Wyoming": [
+        "wyom",
+        "yellowston",
+        "teton",
+        "larami",
+        "trona",
+        "arapaho",
+        "cbm",
+        "shoshon",
+        "bridger",
+        "cheyenn"
     ],
     "Tennessee": [
         "tennesse",
         "nashvil",
         "knoxvil",
-        "memphi"
+        "memphi",
+        "chattanooga",
+        "cheroke",
+        "murfreesboro",
+        "smoki",
+        "carolina",
+        "sec"
+    ],
+    "Texas": [
+        "texa",
+        "houston",
+        "dalla",
+        "austin",
+        "texan",
+        "antonio",
+        "texian",
+        "galveston",
+        "paso",
+        "worth"
+    ],
+    "South Dakota": [
+        "dakota",
+        "sioux",
+        "rushmor",
+        "yankton",
+        "lakota",
+        "byway",
+        "pierr",
+        "dakotan",
+        "licenc",
+        "watertown"
+    ],
+    "Kentucky": [
+        "kentucki",
+        "louisvil",
+        "bluegrass",
+        "lexington",
+        "cincinnati",
+        "bourbon",
+        "ashland",
+        "goebel",
+        "klotter",
+        "renfro"
+    ],
+    "Delaware": [
+        "delawar",
+        "wilmington",
+        "sussex",
+        "castl",
+        "dover",
+        "deldot",
+        "rehoboth",
+        "maryland",
+        "bethani",
+        "nanticok"
+    ],
+    "California": [
+        "california",
+        "san",
+        "sacramento",
+        "californian",
+        "lo",
+        "diego",
+        "proposit",
+        "angel",
+        "francisco",
+        "joaquin"
+    ],
+    "New Mexico": [
+        "mexico",
+        "albuquerqu",
+        "fe",
+        "santa",
+        "rio",
+        "pueblo",
+        "navajo",
+        "gila",
+        "cruce",
+        "camino"
+    ],
+    "New Jersey": [
+        "jersey",
+        "bergen",
+        "newark",
+        "trenton",
+        "paterson",
+        "delawar",
+        "freehold",
+        "hoboken",
+        "hudson",
+        "nj"
+    ],
+    "Georgia": [
+        "georgia",
+        "atlanta",
+        "savannah",
+        "macon",
+        "augusta",
+        "georgian",
+        "columbu",
+        "athen",
+        "marta",
+        "chattahooche"
+    ],
+    "Louisiana": [
+        "louisiana",
+        "parish",
+        "orlean",
+        "creol",
+        "roug",
+        "baton",
+        "slave",
+        "napoleon",
+        "landfal",
+        "franc"
+    ],
+    "Kansas": [
+        "kansa",
+        "wichita",
+        "topeka",
+        "brownback",
+        "kansan",
+        "olath",
+        "dodg",
+        "overland",
+        "hay",
+        "missouri"
+    ],
+    "Florida": [
+        "florida",
+        "seminol",
+        "tampa",
+        "miami",
+        "orlando",
+        "floridian",
+        "daytona",
+        "jacksonvil",
+        "augustin",
+        "citru"
+    ],
+    "Oregon": [
+        "oregon",
+        "portland",
+        "willamett",
+        "cascad",
+        "hillsboro",
+        "malheur",
+        "beaverton",
+        "intel",
+        "nike",
+        "medford"
+    ],
+    "Alabama": [
+        "alabama",
+        "birmingham",
+        "huntsvil",
+        "tuscaloosa",
+        "montgomeri",
+        "mobil",
+        "tuskege",
+        "al",
+        "auburn",
+        "thyssenkrupp"
+    ],
+    "Vermont": [
+        "vermont",
+        "rutland",
+        "bennington",
+        "champlain",
+        "burlington",
+        "hampshir",
+        "montpeli",
+        "brattleboro",
+        "chittenden",
+        "killington"
+    ],
+    "West Virginia": [
+        "virginia",
+        "charleston",
+        "wheel",
+        "kanawha",
+        "beckley",
+        "morgantown",
+        "virginian",
+        "potomac",
+        "huntington",
+        "ohio"
+    ],
+    "Minnesota": [
+        "minnesota",
+        "minneapoli",
+        "minnesotan",
+        "duluth",
+        "dfl",
+        "chippewa",
+        "paul",
+        "twin",
+        "dakota",
+        "anishinaab"
+    ],
+    "Pennsylvania": [
+        "pennsylvania",
+        "pittsburgh",
+        "philadelphia",
+        "eri",
+        "scranton",
+        "harrisburg",
+        "wilk",
+        "delawar",
+        "penn",
+        "pretzel"
+    ],
+    "New York": [
+        "manhattan",
+        "york",
+        "hudson",
+        "albani",
+        "upstat",
+        "niagara",
+        "brooklyn",
+        "buffalo",
+        "ontario",
+        "bronx"
+    ],
+    "Alaska": [
+        "anchorag",
+        "alaskan",
+        "fairbank",
+        "alaska",
+        "borough",
+        "sitka",
+        "bere",
+        "aleutian",
+        "yukon",
+        "juneau"
+    ],
+    "Mississippi": [
+        "mississippi",
+        "leve",
+        "biloxi",
+        "delta",
+        "vicksburg",
+        "bottomland",
+        "yazoo",
+        "tupelo",
+        "natchez",
+        "mississippian"
+    ],
+    "Wisconsin": [
+        "wisconsin",
+        "milwauke",
+        "madison",
+        "eau",
+        "badger",
+        "green",
+        "communist",
+        "michigan",
+        "walker",
+        "packer"
+    ],
+    "Washington": [
+        "seattl",
+        "tacoma",
+        "cascad",
+        "washington",
+        "puget",
+        "vancouv",
+        "rainier",
+        "columbia",
+        "oregon",
+        "whitman"
+    ],
+    "Colorado": [
+        "colorado",
+        "denver",
+        "boulder",
+        "marijuana",
+        "rocki",
+        "coloradan",
+        "arapaho",
+        "pueblo",
+        "anschutz",
+        "rtd"
+    ],
+    "Connecticut": [
+        "connecticut",
+        "hartford",
+        "haven",
+        "bridgeport",
+        "pequot",
+        "fairfield",
+        "stamford",
+        "danburi",
+        "weicker",
+        "groton"
+    ],
+    "Utah": [
+        "utah",
+        "wasatch",
+        "salt",
+        "provo",
+        "ld",
+        "utahn",
+        "ogden",
+        "moab",
+        "tooel",
+        "mormon"
+    ],
+    "South Carolina": [
+        "carolina",
+        "charleston",
+        "newberri",
+        "undergradu",
+        "spartanburg",
+        "clemson",
+        "wofford",
+        "blood",
+        "lander",
+        "upstat"
+    ],
+    "New Hampshire": [
+        "hampshir",
+        "manchest",
+        "exet",
+        "portsmouth",
+        "nashua",
+        "winnipesauke",
+        "concord",
+        "dartmouth",
+        "merrimack",
+        "seacoast"
+    ],
+    "Idaho": [
+        "idaho",
+        "bois",
+        "lewiston",
+        "pocatello",
+        "nampa",
+        "clearwat",
+        "coeur",
+        "alen",
+        "perc",
+        "nez"
+    ],
+    "Arizona": [
+        "arizona",
+        "tucson",
+        "phoenix",
+        "flagstaff",
+        "maricopa",
+        "yuma",
+        "prescott",
+        "icao",
+        "scottsdal",
+        "iata"
+    ],
+    "Virginia": [
+        "virginia",
+        "virginian",
+        "richmond",
+        "fairfax",
+        "commonwealth",
+        "hampton",
+        "chesapeak",
+        "shenandoah",
+        "williamsburg",
+        "arlington"
+    ],
+    "Missouri": [
+        "missouri",
+        "kansa",
+        "loui",
+        "st",
+        "missourian",
+        "ozark",
+        "branson",
+        "bootheel",
+        "hannib",
+        "truman"
+    ],
+    "Massachusetts": [
+        "massachusett",
+        "boston",
+        "springfield",
+        "cod",
+        "worcest",
+        "plymouth",
+        "harvard",
+        "nantucket",
+        "berkshir",
+        "cape"
+    ],
+    "Montana": [
+        "montana",
+        "helena",
+        "yellowston",
+        "montanan",
+        "missoula",
+        "flathead",
+        "bitterroot",
+        "bozeman",
+        "butt",
+        "oreil"
+    ],
+    "Nevada": [
+        "nevada",
+        "vega",
+        "reno",
+        "washo",
+        "prostitut",
+        "la",
+        "unlv",
+        "humboldt",
+        "divorc",
+        "nevadan"
+    ],
+    "Maryland": [
+        "maryland",
+        "baltimor",
+        "chesapeak",
+        "calvert",
+        "annapoli",
+        "montgomeri",
+        "puritan",
+        "princ",
+        "arundel",
+        "mta"
+    ],
+    "Illinois": [
+        "illinoi",
+        "chicago",
+        "champaign",
+        "rockford",
+        "carbondal",
+        "peoria",
+        "stevenson",
+        "egypt",
+        "kaskaskia",
+        "joliet"
+    ],
+    "Indiana": [
+        "indiana",
+        "indianapoli",
+        "evansvil",
+        "wabash",
+        "wayn",
+        "purdu",
+        "colt",
+        "grid",
+        "vincenn",
+        "hoosier"
+    ],
+    "Arkansas": [
+        "arkansa",
+        "ozark",
+        "arkansan",
+        "fayettevil",
+        "ouachita",
+        "quapaw",
+        "ar",
+        "helena",
+        "jonesboro",
+        "crowley"
+    ],
+    "Iowa": [
+        "iowa",
+        "moin",
+        "dubuqu",
+        "quad",
+        "davenport",
+        "cedar",
+        "sioux",
+        "iowan",
+        "pella",
+        "meskwaki"
+    ],
+    "Rhode Island": [
+        "rhode",
+        "newport",
+        "narragansett",
+        "aquidneck",
+        "pawtucket",
+        "clam",
+        "warwick",
+        "quahog",
+        "ri",
+        "blackston"
+    ],
+    "Oklahoma": [
+        "oklahoma",
+        "tulsa",
+        "oklahoman",
+        "norman",
+        "cheroke",
+        "lawton",
+        "ok",
+        "8061",
+        "panhandl",
+        "sooner"
+    ],
+    "Nebraska": [
+        "nebraska",
+        "omaha",
+        "unicamer",
+        "oto",
+        "platt",
+        "dissect",
+        "pawne",
+        "till",
+        "kool",
+        "ponca"
+    ],
+    "Maine": [
+        "main",
+        "portland",
+        "brunswick",
+        "acadia",
+        "blueberri",
+        "penobscot",
+        "mayn",
+        "bubbl",
+        "shipbuild",
+        "abenaki"
+    ],
+    "Ohio": [
+        "ohio",
+        "ohioan",
+        "cincinnati",
+        "toledo",
+        "columbu",
+        "akron",
+        "dayton",
+        "chillicoth",
+        "adena",
+        "cleveland"
+    ],
+    "North Carolina": [
+        "carolina",
+        "charlott",
+        "raleigh",
+        "greensboro",
+        "winston",
+        "chapel",
+        "nc",
+        "wilmington",
+        "durham",
+        "carolinian"
     ]
 }
