@@ -1,6 +1,6 @@
 import math
 
-def cosine_similarity(text1, text2):
+def cos_sim(text1, text2):
     '''
     Returns the cosine similarity of two texts, as represented as a 
     dictionary of tf_idfs

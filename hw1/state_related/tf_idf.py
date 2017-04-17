@@ -1,7 +1,6 @@
-# Implements tf-idf algorithm (term frequency–inverse document frequency)
+#Implements tf-idf algorithm
 #Writes all of the tf-idf data to state_tf_idfs.js
 import re, math, json
-
 
 def text2bag(text):
     """
@@ -47,6 +46,10 @@ def bag2tfidfs(bag, idfs):
     for word in bag:
         tfidf[word] = idfs[word] * bag[word]
     return tfidf
+
+def bags2tfidfs(bags):
+    idfs = bags2idfs(bags)
+    return {key: bag2tfidfs(val, idfs) for key, val in bags.items()}
 
 if __name__ == '__main__':
     states=[line.strip() for line in open("states.txt")]

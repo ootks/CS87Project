@@ -1,7 +1,6 @@
 import re
 import wikipedia
 import html2text
-from bs4 import BeautifulSoup
 import nltk
 import json
 
@@ -31,7 +30,7 @@ def stem(token, stem_list):
 porter = nltk.PorterStemmer()
 stem2tokens = dict()
 for state in states:
-    with open('states/' + re.sub(" ", "_", state).lower() + ".txt", 'w') as g:
+    with open('states_wiki/' + re.sub(" ", "_", state).lower() + ".txt", 'w') as g:
         print("Getting article for " + state)
         # Only use disambiguation if needed
         try:
@@ -41,16 +40,4 @@ for state in states:
             if type(e) == KeyboardInterrupt:
                 exit()
             page = wikipedia.page(state + " (U.S. state)")
-        #Remove all non alpha-numeric characters
-        content = re.sub("[^a-zA-Z0-9 ]+", " ", page.content)
-        #Tokenize
-        tokens = nltk.word_tokenize(content)
-        #Stem all of the words
-        tokens = [stem(t, stem2tokens) for t in tokens]
-        print("Got page for " + page.title)
-        g.write(' '.join(tokens))
-
-#Write the list of stems to a file
-stem2tokens = {key : list(value) for key, value in stem2tokens.items()}
-with open("stem2tokens.js", 'w') as f:
-    f.write(json.dumps(stem2tokens, indent = 4, separators = (',', ': ')))
+        g.write(page.content)
