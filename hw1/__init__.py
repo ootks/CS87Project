@@ -63,18 +63,10 @@ def get_mentioned_states(message):
 def most_similar_state(message):
     """Finds the state most similar to the message"""
     message = parse.clean_text(message, dict())
-    bags["message"] = tf_idf.text2bag(message)
+    msg_bag = tf_idf.text2bag(message)
     tf_idfs = tf_idf.bags2tfidfs(bags)
-
-    max_cos = cosine_similarity.cos_sim(bags["message"], bags["Michigan"])
-    candidate = "Michigan"
-    for state in bags:
-        if state != "message":
-            cos = cosine_similarity.cos_sim(bags["message"], bags[state])
-            if cos > max_cos:
-                candidate = state
-                max_cos = cos
-    return candidate
+    return max(bags,
+        key = lambda s : cosine_similarity.cos_sim(msg_bag, bags[s]))
 
 def get_response(state):
     """Returns the response about the given state"""

@@ -1,9 +1,17 @@
 # Using `textualtoy.py`
-Note: This file needs tweaking to prevent total punctuation loss, which causes words such as "well" and "we'll" to be interpreted as the same word.
+Example poetic outputs, using Shel Silverstein's 'A Boy Named Sue' as input:
 
+> And cut off a piece of my ear. But I busted a chair
+> I know some lonely houses off the road
+> in the mud and the blood and the beer.
+
+> I tell you I've fought tougher men but I really can't remember when.
+> It can't be summer, - that got through;
+> My fist got hard and my wits got keen.
 
 ### The `get_poem()` function
-`get_poem(user_corpus, minimum_length=20, maximum_rank=3)`
+Function definition:
+`get_poem(user_corpus, min_length=20, max_rank=3)`
 
 This is the main function in the file, for which every other function is a helper. All information in this README is a duplicate of comments in the file, edited for clarity.
 
