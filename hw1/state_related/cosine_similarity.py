@@ -8,5 +8,7 @@ def cos_sim(text1, text2):
     dot = sum([text1[word] * text2[word] for word in text1 if word in text2])
     len1 = math.sqrt(sum([x*x for x in text1.values()]))
     len2 = math.sqrt(sum([x*x for x in text2.values()]))
+    if len1 * len2 == 0:
+        return -10000
     
     return dot/(len1 * len2)

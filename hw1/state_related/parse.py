@@ -21,6 +21,7 @@ def clean_text(text, stem2tokens):
     content = re.sub("[^a-zA-Z0-9 ]+", " ", text)
     #Tokenize
     tokens = nltk.word_tokenize(content)
+    tokens = [token for token in tokens if len(token) > 3]
     #Stem all of the words
     tokens = [stem(t, stem2tokens) for t in tokens]
     return ' '.join(tokens)

@@ -30,14 +30,17 @@ for state in states:
 
 @app.route("/")
 def homepage():
+    """Render the homepage"""
     return render_template("index.html")
 @app.route("/chatbot")
 def chatbot():
-    #Return the index page
+    """Return the chatbot page"""
     return render_template("chatbot.html")
 
 @app.route("/state_responder")
 def state_response():
+    """Responds to a given message with state related responses"""
+
     #Get the message from the client
     message = str(request.args.get("message"))
     #If the client sends over a state,
@@ -73,9 +76,8 @@ def most_similar_state(message):
                 max_cos = cos
     return candidate
 
-
-
 def get_response(state):
+    """Returns the response about the given state"""
     return "{} is all about {}, {}, and {}.".format(
             state,
             stem2tokens[most_sig[state][1]][0],
@@ -85,11 +87,13 @@ def get_response(state):
     
 @app.route("/tt1")
 def tt1():
+    """Render the Textual Toy page"""
     #Get the message from the client
     return render_template("textualtoy1.html")
 
 @app.route("/tt1_responder")
 def tt1_response():
+    """Responds to a given message with a related poem"""
     #Get the message from the client
     message = str(request.args.get("message"))
     lines = [line for line in message.split("\n") if line != '']

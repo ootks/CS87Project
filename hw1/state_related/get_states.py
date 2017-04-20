@@ -27,7 +27,6 @@ def stem(token, stem_list):
     
 
 #Stemmer for getting stems
-porter = nltk.PorterStemmer()
 stem2tokens = dict()
 for state in states:
     with open('states_wiki/' + re.sub(" ", "_", state).lower() + ".txt", 'w') as g:
