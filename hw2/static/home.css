@@ -39,7 +39,7 @@ nav{
 #contents{
     width:100%;
 }
-#responses{
+#responses, label, p{
     color: #DDDDDD;
 }
 /*#title h1{
