@@ -35,7 +35,7 @@ else:
 def generate_poem():
     poem = []
     for sent in states:
-        line = ' '.join([random.choice(state_words[state]).capitalize() for state in sent])
+        line = ' '.join([random.choice(state_words[state]) for state in sent])
         line = line[0].upper() + line[1:]
         poem.append(line)
     return '\n'.join(poem)
