@@ -37,7 +37,7 @@ def next_ngram(model, curr):
         Generates a new ngram, given a model and a current ngram
     """
     if curr not in model:
-        raise Exception
+        raise Exception("Keyword '" + curr + "' not found in text")
     choices = model[curr]
     r_num = random.random()
     
@@ -64,7 +64,7 @@ def next_sentence(model, curr):
 def random_seed(text, n):
     """Get a random seed of length n from text"""
     index = random.randint(0, len(text)-3)
-    return text[index: index+3]
+    return text[index: index+n]
 
 #Test script, only runs if called as main
 if __name__ == '__main__':
