@@ -1,5 +1,7 @@
-import nltk
+import os
+import pickle
 import random
+import nltk
 from nltk.corpus import gutenberg
 from nltk.corpus import cmudict
 
@@ -7,7 +9,6 @@ states = [  [('a', 'DT'), ('b', 'JJ'), ('c', 'NN')],
             [('d', 'VBG'), ('e', 'NN')],
             [('f', 'IN'), ('g', 'NN')]
          ]
-
 
 # Generate dictionary of words and POS from Alice in Wonderland corpus
 def generate_dictionary():
@@ -22,7 +23,14 @@ def generate_dictionary():
                 word_dict[state].append(word.lower())
     return word_dict
 
-state_words = generate_dictionary()
+filename = os.path.join(os.path.dirname(os.path.abspath(__file__)),'dict.pkl')
+if os.path.isfile(filename):
+    with open(filename, 'rb') as f:
+        state_words = pickle.load(f)
+else:
+    state_words = generate_dictionary()
+    with open(filename, 'wb') as f:
+        pickle.dump(state_words, f)
 
 def generate_poem():
     poem = []
