@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+<form>
+    <button id = "send">New Poem</button>
+</form>
+<div id = "poem">
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src = "{{ url_for('static', filename='hmm_submitter.js') }}"></script>
+{% endblock %}

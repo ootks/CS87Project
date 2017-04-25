@@ -1,5 +1,7 @@
 import nltk
 import random
+import os
+import json
 from nltk.corpus import gutenberg
 from nltk.corpus import cmudict
 
@@ -7,7 +9,6 @@ states = [  [('a', 'DT'), ('b', 'JJ'), ('c', 'NN')],
             [('d', 'VBG'), ('e', 'NN')],
             [('f', 'IN'), ('g', 'NN')]
          ]
-
 
 # Generate dictionary of words and POS from Alice in Wonderland corpus
 def generate_dictionary():
