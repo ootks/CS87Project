@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+<form>
+    <label>Corpus: </label>
+    <textarea id = "messenger" cols="50"></textarea>
+    <br>
+    <label>Seed: </label>
+    <input type = "text" id = "seed"></input>
+    <br>
+    <label>Sample Size: </label>
+    <input type = "text" id = "size"></input>
+    <br>
+    <button id = "send">Start Story</button>
+</form>
+<div id = "current_story">
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src = "{{ url_for('static', filename='markov_submitter.js') }}"></script>
+{% endblock %}

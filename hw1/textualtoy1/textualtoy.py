@@ -1,8 +1,8 @@
 # Functions as a "textual toy" for part 3 of homework 1.
 
 import random # Used to randomize sentence-padding & sentence selection.
-from tf_idf_claire import *
-from cosine_similarity_claire import *
+from textualtoy1.tf_idf_claire import *
+from textualtoy1.cosine_similarity_claire import *
 import os
 
 dir_path = os.path.dirname(os.path.realpath(__file__)) + '/'
@@ -147,10 +147,10 @@ def get_parsed_dickinson_list(filename='dickinson.txt'):
 # print(get_sentence_by_importance(2, ["hey","sentence one", "sentence sentence two", "very important sentence, please be aware of my importance"]))
 
 # # Test get_poem()
-testfile = "silverstein.txt"
-with open(testfile) as file:
-    test_list = file.readlines()
-print("Poem Output:\n\n" + get_poem(test_list))
-
-
-
+#testfile = "silverstein.txt"
+#with open(testfile) as file:
+#    test_list = file.readlines()
+#print("Poem Output:\n\n" + get_poem(test_list))
+#
+#
+#

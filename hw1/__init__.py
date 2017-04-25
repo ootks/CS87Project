@@ -7,7 +7,6 @@ from state_related import cosine_similarity
 from state_related import parse
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.realpath(__file__))+'/textualtoy1')
 from textualtoy1 import textualtoy
 
 app = Flask(__name__)
