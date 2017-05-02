@@ -1,0 +1,83 @@
+#chatbox{
+    width: 100%;
+}
+#chat{
+    width: 50%;
+    margin: 0 auto;
+}
+#responses{ 
+    text-align: center;
+}
+#messenger{
+    width:100%;
+    margin-top: 10%
+}
+body { 
+        background: black;
+        font-family: 'Roboto', sans-serif;
+}
+a { 
+    text-decoration: inherit;
+}
+a:hover {
+    color: white;
+}
+#header *{
+    color: #DDDDDD;
+}
+ul {
+    list-style-type: none;
+}
+nav ul li{
+    margin-left:10px;
+    display:inline;
+    text-align:center;
+}
+nav{
+    display:inline-block;
+}
+#contents{
+    width:100%;
+}
+#responses, label, p{
+    color: #DDDDDD;
+}
+/*#title h1{
+    text-align:center;
+    margin-bottom: 0px;
+}
+nav ul{
+    width: 40%;
+    margin: auto;
+    font-size: 20px;
+}
+.labels {
+    color: white;
+    font-weight: bold;
+}
+.entry * {
+    margin: auto;
+    width: 20%;
+}
+.hline{
+    width: 50%;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    border-bottom: 1px solid white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+}
+form{
+    width: 100%;
+}
+form *{
+    margin: auto;
+    color: black;
+}
+.form_thing{
+    width: 30%;
+}
+*/

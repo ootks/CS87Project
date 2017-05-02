@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+
+{% block scripts %}
+    <script src="{{ url_for('static',filename='cfg_submitter.js') }}"></script> 
+{% endblock %}
+
+{% block contents %}
+<div id = "chatbox">
+<div id= "chat">
+    <textarea id = "messenger" cols="50"></textarea>
+    <button type="button" id="submit">Submit</button>
+</div>
+<div id = "responses">
+</div>
+</div>
+{% endblock %}

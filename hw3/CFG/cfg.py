@@ -31,7 +31,21 @@ def cfg_to_string(cfg):
     non_terminal_pattern = re.compile("|".join(["("+x+")" for x in cfg.keys()]))
     #Iteratively replace all of the non terminals with random entries from their 
     #rhs
-    while bool(re.match(non_terminal_pattern, string)):
+    while bool(re.search(non_terminal_pattern, string)):
         string = re.sub(non_terminal_pattern,
                 lambda x: get_random_rhs(cfg, x.group(0)), string)
-    return string
+
+    return re.sub("%", "<br>", string)
+
+#Tests the cfg generator on an example
+if __name__ == '__main__':
+    x = """<start>: <subject> <verb> <object>
+    <subject>: I | You | They
+    <verb>: want | hate | like | love
+    <object>: <food> | <animals>
+    <food>: coffee | bread | soya
+    <animals>: cats | dogs | fish"""
+
+    cfg = text_to_cfg(x)
+    #print(cfg)
+    print(cfg_to_string(cfg))
