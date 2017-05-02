@@ -5,5 +5,4 @@ Caltech Spring 2017
 * [Kevin Shu](https://github.com/ootks)
 * [Claire Goeckner-Wald](http://claire.work/)
 
-
-
+Course website is [here](http://eranhadas.com/87/).
