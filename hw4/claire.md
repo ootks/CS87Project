@@ -4,15 +4,15 @@ Claire Goeckner-Wald
 ### Compose a 3-word permutation poem.
 It may or may not have all permutations, it may or may not have repetition of lines.
 
-> KILL OUR PROCESS
-> PROCESS OUR KILL
+> KILL OUR PROCESS <br>
+> PROCESS OUR KILL <br>
 > OUR KILL PROCESS.
 
 ### Compose a Biku.
 A 3-line poem where two lines are identical or almost identical.
 
-> Textbook problems.
-> Textbook problems.
+> Textbook problems. <br>
+> Textbook problems. <br>
 > Caltech
 
 ### Compose a Haiku Biku.
@@ -21,8 +21,8 @@ Tom La Farge suggested the form of Haiku Biku, forcing a 5-7-5 syllable structur
 ### Rewrite this line in the form of a Haiku Biku
 “You cannot step twice into the same river” said Heraklitus.
 
-> Step once.
-> Step twice.
+> Step once. <br>
+> Step twice. <br>
 > New river.
 
 ### Compose An Oulipian Médaille
