@@ -1,7 +1,7 @@
 
 ## What are you going to do?
 
-Scrape data from [/r/wholesomememes](reddit.com/r/wholesomememes) and generate wholesome replies to comments.
+Scrape data from [/r/wholesomememes](reddit.com/r/wholesomememes) and generate wholesome replies to comments. We will use [The Python Reddit API Wrapper](https://praw.readthedocs.io/en/latest/) to scrape data.
 
 ## How (what techniques) are you going to do it?
 
