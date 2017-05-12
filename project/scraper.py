@@ -2,7 +2,7 @@ import praw
 from praw.models import MoreComments, Submission
 import os
 
-num_posts = 100
+num_posts = 1000
 score_threshold = 10
 parent_child_demarcator = '\x0b' # vertical tab
 scraped_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'data/scraped')
@@ -35,23 +35,26 @@ print()
 
 # iterate through the top 100 posts of all time
 post_num = 1
-for submission in subreddit.top(limit=num_posts):
-    s_title = sanitize(submission.title)
-    # default comment sort is 'best'
-    print("Scraping submission (%d/%d):" % (post_num, num_posts), s_title)
-    submission.comments.replace_more()
-    num_comments = 0
-    with open(os.path.join(scraped_path, submission.id), 'w') as f:
+with open(os.path.join(scraped_path, 'top_%d_posts.txt' % num_posts), 'w') as f:
+    for submission in subreddit.top(limit=num_posts):
+        s_title = sanitize(submission.title)
+        # default comment sort is 'best'
+        print("Scraping submission %d/%d, score %d:" % \
+            (post_num, num_posts, submission.score), s_title)
+        submission.comments.replace_more(limit=None)
+        num_comments = 0
         for comment in submission.comments.list():
             if isinstance(comment, MoreComments) \
-                    or comment.score < score_threshold:
+                    or comment.score < score_threshold \
+                    or comment.body == '[deleted]' \
+                    or comment.body == '[removed]':
                 continue
             line = ''
             parent = comment.parent()
             if isinstance(parent, Submission):
                 line += s_title
             else:
-                if parent.body == '[deleted]':
+                if parent.body == '[deleted]' or parent.body == '[removed]':
                     continue
                 line += sanitize(parent.body)
             line += parent_child_demarcator
@@ -59,5 +62,5 @@ for submission in subreddit.top(limit=num_posts):
             line += '\n'
             f.write(line)
             num_comments += 1
-    print("Done scraping %d comments" % num_comments)
-    post_num += 1
+        print("Done scraping %d comments" % num_comments)
+        post_num += 1
