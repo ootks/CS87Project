@@ -1,4 +1,4 @@
-import os
+import os, sys
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, LSTM
@@ -7,6 +7,8 @@ from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 from sklearn.preprocessing import LabelEncoder
 import scraper
+
+train = True
 
 def load_text(num_posts):
     filename = os.path.join(scraper.scraped_path, 'top_%d_posts.txt' % num_posts)
@@ -46,6 +48,20 @@ def generate_input_output(encoded_text, seq_len):
     y = np_utils.to_categorical(dataY)
     return X, y
 
+def generate_reply(model, corpus, seed):
+    line = seed + '\x0b'
+    while True:
+        x = np.reshape(corpus.transform(list(line[-30:])), (1, 30))
+        prediction = model.predict(x, verbose=0)[0]
+        # index = np.argmax(prediction)
+        index = np.random.choice(range(len(corpus.classes_)), p=prediction)
+        result = corpus.inverse_transform([index])[0]
+        if result == '\n' or result == '\x0b':
+            break
+        line += result
+    line.replace('\r', '\n')
+    return line
+
 text = load_text(100)
 print("Total characters:", sum(map(len, text)))
 
@@ -59,15 +75,22 @@ print("Total patterns:", X.shape[0])
 # Define LSTM model
 model = Sequential()
 model.add(Embedding(n_classes, 32))
+# Comment out for one layer:
+model.add(LSTM(256, dropout=0.2, recurrent_dropout=0.2, return_sequences=True))
 model.add(LSTM(256, dropout=0.2, recurrent_dropout=0.2))
-# model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
+
+if not train:
+    filename = 'models/one_layer/weights-improvement-04-0.9329.hdf5'
+    model.load_weights(filename)
+
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
-# Add checkpoints to save models at different points of training
-filepath="weights-improvement-{epoch:02d}-{loss:.4f}.hdf5"
-checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
-callbacks_list = [checkpoint]
+if train:
+    # Add checkpoints to save models at different points of training
+    filepath="weights-improvement-{epoch:02d}-{loss:.4f}.hdf5"
+    checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+    callbacks_list = [checkpoint]
+    model.fit(X, y, epochs=20, batch_size=1024, callbacks=callbacks_list)
 
-model.fit(X, y, epochs=20, batch_size=128, callbacks=callbacks_list)
-
+print(generate_reply(model, corpus, "How are you doing today? I'm doing great!"))
