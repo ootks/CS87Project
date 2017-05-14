@@ -8,7 +8,7 @@ from keras.utils import np_utils
 from sklearn.preprocessing import LabelEncoder
 import scraper
 
-train = True
+train = False
 
 def load_text(num_posts):
     filename = os.path.join(scraper.scraped_path, 'top_%d_posts.txt' % num_posts)
@@ -50,16 +50,19 @@ def generate_input_output(encoded_text, seq_len):
 
 def generate_reply(model, corpus, seed):
     line = seed + '\x0b'
-    while True:
+    while len(line) < 1000:
         x = np.reshape(corpus.transform(list(line[-30:])), (1, 30))
         prediction = model.predict(x, verbose=0)[0]
+        # argmax often just results in an infinite loop in text generation,
+        # so we pick the next letter with a probability distribution instead
+        # in order to 
         # index = np.argmax(prediction)
         index = np.random.choice(range(len(corpus.classes_)), p=prediction)
         result = corpus.inverse_transform([index])[0]
         if result == '\n' or result == '\x0b':
             break
         line += result
-    line.replace('\r', '\n')
+    line.replace('\t', '\n')
     return line
 
 text = load_text(100)
@@ -81,7 +84,8 @@ model.add(LSTM(256, dropout=0.2, recurrent_dropout=0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 
 if not train:
-    filename = 'models/one_layer/weights-improvement-04-0.9329.hdf5'
+    # filename = 'models/one_layer/weights-improvement-04-0.9329.hdf5'
+    filename = 'models/two_layers/weights-improvement-62-0.7493.hdf5'
     model.load_weights(filename)
 
 model.compile(loss='categorical_crossentropy', optimizer='adam')
@@ -91,6 +95,6 @@ if train:
     filepath="weights-improvement-{epoch:02d}-{loss:.4f}.hdf5"
     checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
     callbacks_list = [checkpoint]
-    model.fit(X, y, epochs=20, batch_size=1024, callbacks=callbacks_list)
+    model.fit(X, y, epochs=100, batch_size=1024, callbacks=callbacks_list)
 
 print(generate_reply(model, corpus, "How are you doing today? I'm doing great!"))
