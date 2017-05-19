@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='submitter.js')}}"></script>
+{% endblock %}
+
+{% block contents %}
+<div id = "chatbox">
+<div id= "chat">
+    <input type = "text" id = "messenger">
+</div>
+<div id = "responses">
+</div>
+</div>
+{% endblock %}

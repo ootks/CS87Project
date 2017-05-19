@@ -10,6 +10,7 @@ import scraper
 
 train = False
 
+# Return a text as a list of lines from top_[num_posts]_posts.txt
 def load_text(num_posts):
     filename = os.path.join(scraper.scraped_path, 'top_%d_posts.txt' % num_posts)
     return [list(line) for line in open(filename)]
@@ -74,6 +75,8 @@ print("Total characters:", n_classes)
 
 X, y = generate_input_output(encoded_text, 30)
 print("Total patterns:", X.shape[0])
+print("Right output:", y.shape[1])
+
 
 # Define LSTM model
 model = Sequential()
@@ -97,4 +100,4 @@ if train:
     callbacks_list = [checkpoint]
     model.fit(X, y, epochs=100, batch_size=1024, callbacks=callbacks_list)
 
-print(generate_reply(model, corpus, "How are you doing today? I'm doing great!"))
+print(generate_reply(model, corpus, "sdasdasd"))
