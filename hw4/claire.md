@@ -97,7 +97,7 @@ Original Poem:
 > Send these, the homeless, tempest-tost to me, <br>
 > I lift my lamp beside the golden door!" <br>
 
-Lipogram(removed a's):
+Lipogram (removed a's):
 > Not like the intrepid soul of Greek blood, <br>
 > With conquering limbs stretched from shore to shore; <br>
 > Here by our wide-sweeping, sunset columns, will support <br>
