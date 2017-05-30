@@ -100,4 +100,4 @@ if train:
     callbacks_list = [checkpoint]
     model.fit(X, y, epochs=100, batch_size=1024, callbacks=callbacks_list)
 
-print(generate_reply(model, corpus, "sdasdasd"))
+print(generate_reply(model, corpus, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"))
