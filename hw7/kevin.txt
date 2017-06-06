@@ -1,0 +1,23 @@
+1.
+"The Next Village" (1919)
+
+I felt that this story made very effective use of the literary techniques described in this course. Specifically, the way Kafka introduces multiple characters within a single piece of narration produces an incredible awareness of how many different timescales and lengthscales are present in these few lines, which served as a highly illustrative example of 'defamiliarization' in literature.
+
+2.
+Modern
+"If I Told Him: A Completed Portrait of Picasso" (1923)
+
+As a short preface, a friend of mine in High School showed me this poem at one point and laughed at it, citing it as an example of modern art that didn't really serve any purpose. I now think that this poem is in a way a very useful tool for decoupling my perception of language and what the words on the page in a more literal sense.
+
+Postmodern 
+"Thank You for Saying Thank You" (2002/3)
+I thought, first of all, that this poem was quite funny, but also its self-referential nature was quite interesting, in that what gave it a multiplicity of meanings was precisely its insistence that it had a single unique meaning.
+
+Internet Age
+"First My Motorola" (2006)
+I thought it interesting how much of a story could be told just using these brand names, and also felt that the autobiographical/data driven nature of the text was rather indicative of internet era poetry.
+
+
+3.
+"An Imperial Message" - Franz Kafka 
+This story could serve as an allegory for a recursive algorithm which lacks a base case. Kafka describes infinity in a way which is rather mathematical by taking an ordinary journey, defamiliarizing it by describing the endless sequence of repetitions that would actually be required for this journey. This would fit well in the sections describing defamiliarization as a literary technique, or in the section on logic and deconstruction.

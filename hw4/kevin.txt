@@ -1,8 +1,17 @@
+1. Permutation Poem
+
+LIVING WITHOUT LOVE 
+WITHOUT LIVING LOVE 
+LIVING LOVE WITHOUT 
+LOVE LIVING WITHOUT 
+WITHOUT LOVE LIVING 
+LOVE WITHOUT LIVING 
+
 2.Biku
 
 We sing
 Wheezing
-Amongst the rumble
+Amongst the rubble
 
 3. Haiku Biku
 
@@ -10,10 +19,33 @@ Gambol in the park
 A couple tender touches
 Gamble in the dark
 
-5.
+4. Haiku Biku Saying
+
+A winding river
+Several small moments pass
+A winding River
+
+5. Medaille
+
 Some intense passions
 Going on a camping trip
 Pass on in some tents
+
+6. Structuralist Algorithm
+
+1. You are beautiful
+2. You are like something
+3. You are like the ocean
+4. You are like the blue
+5. You are like the boundless blue
+6. You are like the boundless, bountiful blue
+
+
+7. Cherry picking
+====A Markov Chain Based Poem, starting with Stopping by a Snowy Wood in Evening by Robert Frost====
+i sleep of easy will up willage, the only othere is hough; here i sleep.
+g here lovely, darkest the dark, and deep.
+ downy flake the gives to go before i sleep, and frozen the withough; here i sleep.
 
 8. Lipogram
 
