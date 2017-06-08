@@ -13,14 +13,9 @@ The poetic intention is to put a new spin on text generation, using the "wholeso
 
 ## Chatbot In-action
 
-![screenshot1](https://github.com/ootks/CS87Project/blob/master/project/screenshot1.png "screenshot1")
-![screenshot2](https://github.com/ootks/CS87Project/blob/master/project/screenshot2.png "screenshot2")
-![screenshot3](https://github.com/ootks/CS87Project/blob/master/project/screenshot3.png "screenshot3")
-![screenshot4](https://github.com/ootks/CS87Project/blob/master/project/screenshot4.png "screenshot4")
-![screenshot5](https://github.com/ootks/CS87Project/blob/master/project/screenshot5.png "screenshot5")
-![screenshot6](https://github.com/ootks/CS87Project/blob/master/project/screenshot6.png "screenshot6")
-![screenshot7](https://github.com/ootks/CS87Project/blob/master/project/screenshot7.png "screenshot7")
-![screenshot8](https://github.com/ootks/CS87Project/blob/master/project/screenshot8.png "screenshot8")
 ![screenshot9](https://github.com/ootks/CS87Project/blob/master/project/screenshot9.png "screenshot9")
+![screenshot6](https://github.com/ootks/CS87Project/blob/master/project/screenshot6.png "screenshot6")
 ![screenshot10](https://github.com/ootks/CS87Project/blob/master/project/screenshot10.png "screenshot10")
-![screenshot11](https://github.com/ootks/CS87Project/blob/master/project/screenshot11.png "screenshot11")
+![screenshot3](https://github.com/ootks/CS87Project/blob/master/project/screenshot3.png "screenshot3")
+![screenshot7](https://github.com/ootks/CS87Project/blob/master/project/screenshot7.png "screenshot7")
+
