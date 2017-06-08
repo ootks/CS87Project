@@ -1,4 +1,5 @@
 import os, sys
+import math
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, LSTM
@@ -51,9 +52,13 @@ def generate_input_output(encoded_text, seq_len):
 
 def generate_reply(model, corpus, seed):
     line = seed + '\x0b'
+    perp = 0
     while len(line) < 1000:
         x = np.reshape(corpus.transform(list(line[-30:])), (1, 30))
         prediction = model.predict(x, verbose=0)[0]
+
+        perp -= sum([p * math.log(p) for p in prediction])
+
         # argmax often just results in an infinite loop in text generation,
         # so we pick the next letter with a probability distribution instead
         # in order to 
@@ -64,6 +69,7 @@ def generate_reply(model, corpus, seed):
             break
         line += result
     line.replace('\t', '\n')
+    print(perp)
     return line
 
 text = load_text(100)
@@ -100,4 +106,4 @@ if train:
     callbacks_list = [checkpoint]
     model.fit(X, y, epochs=100, batch_size=1024, callbacks=callbacks_list)
 
-print(generate_reply(model, corpus, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"))
+print(generate_reply(model, corpus, "Everything is great, I am happy"))
