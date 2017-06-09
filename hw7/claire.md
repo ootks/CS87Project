@@ -1,5 +1,5 @@
 # Homework 7 - Computational Literature
-Brian Lee
+Claire Goeckner-Wald
 
 ## 1. Favorite overall work.
 Out of the works discussed in class, select the literary work you loved the most. Just specify its title and give a one sentence explanation that should convince me why you preferred this work over the others.
